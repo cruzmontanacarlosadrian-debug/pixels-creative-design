@@ -1,0 +1,250 @@
+@import "tailwindcss";
+
+@theme {
+  --font-pixel: "Press Start 2P", monospace;
+  --font-body: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  /* Photoshop Dark UI */
+  --color-ps-app: #161616;
+  --color-ps-canvas: #1e1e1e;
+  --color-ps-panel: #2b2b2b;
+  --color-ps-panel2: #323232;
+  --color-ps-well: #242424;
+  --color-ps-line: #3f3f3f;
+  --color-ps-line2: #535353;
+  --color-ps-text: #d8d8d8;
+  --color-ps-muted: #8f8f8f;
+  --color-ps-blue: #2f80ed;
+  --color-ps-cyan: #31a8ff;
+
+  /* CMYK acentos */
+  --color-ink-cyan: #00b7eb;
+  --color-ink-magenta: #ec008c;
+  --color-ink-yellow: #ffd400;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #161616;
+  color: #d8d8d8;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #2f80ed;
+  color: #fff;
+}
+
+/* ─── scrollbar tipo Photoshop ─── */
+::-webkit-scrollbar { width: 12px; height: 12px; }
+::-webkit-scrollbar-track { background: #1e1e1e; }
+::-webkit-scrollbar-thumb {
+  background: #3f3f3f;
+  border: 3px solid #1e1e1e;
+}
+::-webkit-scrollbar-thumb:hover { background: #535353; }
+::-webkit-scrollbar-corner { background: #1e1e1e; }
+
+/* ─── patrones ─── */
+.bg-checker {
+  background-image: conic-gradient(#232323 25%, #1b1b1b 0 50%, #232323 0 75%, #1b1b1b 0);
+  background-size: 24px 24px;
+}
+.bg-checker-light {
+  background-image: conic-gradient(#2c2c2c 25%, #212121 0 50%, #2c2c2c 0 75%, #212121 0);
+  background-size: 16px 16px;
+}
+.bg-dotgrid {
+  background-image: radial-gradient(#3a3a3a 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+.bg-ruler-h {
+  background-image:
+    repeating-linear-gradient(90deg, #565656 0 1px, transparent 1px 10px),
+    repeating-linear-gradient(90deg, #6d6d6d 0 1px, transparent 1px 50px);
+  background-size: 100% 6px, 100% 12px;
+  background-position: bottom, bottom;
+  background-repeat: repeat-x;
+}
+.bg-ruler-v {
+  background-image:
+    repeating-linear-gradient(0deg, #565656 0 1px, transparent 1px 10px),
+    repeating-linear-gradient(0deg, #6d6d6d 0 1px, transparent 1px 50px);
+  background-size: 6px 100%, 12px 100%;
+  background-position: right, right;
+  background-repeat: repeat-y;
+}
+
+/* ─── overlay de scanlines / ruido ─── */
+.scanlines::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.018) 0 1px, transparent 1px 3px),
+    radial-gradient(ellipse at 50% 0%, rgba(47,128,237,0.05), transparent 60%);
+}
+
+/* ─── hormigas marchantes (selección) ─── */
+@keyframes ants {
+  to { stroke-dashoffset: -24; }
+}
+.ants-rect {
+  fill: none;
+  stroke-width: 1.5;
+  stroke-dasharray: 7 5;
+  animation: ants 0.7s linear infinite;
+  vector-effect: non-scaling-stroke;
+}
+
+/* borde punteado animado con background (para divs) */
+@keyframes ants-bg {
+  to { background-position: 100% 0, 0 100%, 0 0, 100% 100%; }
+}
+.ants-border {
+  background-image:
+    repeating-linear-gradient(90deg, #fff 0 6px, transparent 6px 12px),
+    repeating-linear-gradient(90deg, #fff 0 6px, transparent 6px 12px),
+    repeating-linear-gradient(0deg, #fff 0 6px, transparent 6px 12px),
+    repeating-linear-gradient(0deg, #fff 0 6px, transparent 6px 12px);
+  background-size: 100% 1.5px, 100% 1.5px, 1.5px 100%, 1.5px 100%;
+  background-position: 0 0, 0 100%, 0 0, 100% 0;
+  background-repeat: no-repeat;
+  animation: ants-bg 0.6s linear infinite;
+}
+
+/* ─── marquesina ─── */
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 26s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+
+/* ─── cursor de texto parpadeante ─── */
+@keyframes blink { 50% { opacity: 0; } }
+.pixel-caret { animation: blink 0.9s steps(1) infinite; }
+
+/* ─── pixel flotar ─── */
+@keyframes pixelfloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+.pixel-float { animation: pixelfloat 5s ease-in-out infinite; }
+.pixel-float-slow { animation: pixelfloat 8s ease-in-out infinite; }
+
+/* ─── revelado 3D al hacer scroll ─── */
+.reveal {
+  opacity: 0;
+  transform: perspective(1100px) rotateX(14deg) translateY(64px) scale(0.97);
+  transform-origin: 50% 100%;
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+.reveal.is-in {
+  opacity: 1;
+  transform: perspective(1100px) rotateX(0) translateY(0) scale(1);
+}
+.reveal-left {
+  opacity: 0;
+  transform: perspective(1100px) rotateY(-18deg) translateX(-70px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-left.is-in { opacity: 1; transform: perspective(1100px) rotateY(0) translateX(0); }
+.reveal-right {
+  opacity: 0;
+  transform: perspective(1100px) rotateY(18deg) translateX(70px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-right.is-in { opacity: 1; transform: perspective(1100px) rotateY(0) translateX(0); }
+
+/* ─── tarjeta con tilt 3D ─── */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s;
+}
+.tilt-inner { transform: translateZ(46px); transform-style: preserve-3d; }
+
+/* ─── botones pixel (sin esquinas redondeadas, sombra dura) ─── */
+.btn-pixel {
+  position: relative;
+  font-family: "Press Start 2P", monospace;
+  image-rendering: pixelated;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.2s;
+  box-shadow: 4px 4px 0 0 #000;
+}
+.btn-pixel:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 0 #000; }
+.btn-pixel:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 0 #000; }
+
+.chip-hard { box-shadow: 3px 3px 0 0 #000; transition: transform .15s ease, box-shadow .15s ease; }
+.chip-hard:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 0 #000; }
+
+/* ─── barra de progreso rayada (exportación) ─── */
+@keyframes stripes { to { background-position: 24px 0; } }
+.progress-stripes {
+  background-image: repeating-linear-gradient(45deg, rgba(0,0,0,0.25) 0 8px, transparent 8px 16px);
+  background-size: 24px 24px;
+  animation: stripes 0.7s linear infinite;
+}
+
+/* ─── glitch sutil para el título ─── */
+@keyframes rgbshift {
+  0%, 92%, 100% { text-shadow: 2px 0 0 rgba(236,0,140,0.55), -2px 0 0 rgba(0,183,235,0.55); }
+  94% { text-shadow: -3px 1px 0 rgba(236,0,140,0.8), 3px -1px 0 rgba(0,183,235,0.8); }
+  96% { text-shadow: 3px 2px 0 rgba(236,0,140,0.8), -3px -2px 0 rgba(0,183,235,0.8); }
+  98% { text-shadow: 1px 0 0 rgba(236,0,140,0.6), -1px 0 0 rgba(0,183,235,0.6); }
+}
+.rgb-shift { animation: rgbshift 6s steps(1) infinite; }
+
+/* ─── línea de scan que recorre la pantalla ─── */
+@keyframes sweep {
+  0% { transform: translateY(-10%); opacity: 0; }
+  8% { opacity: 1; }
+  92% { opacity: 1; }
+  100% { transform: translateY(110vh); opacity: 0; }
+}
+.sweep-line {
+  position: fixed;
+  left: 0; right: 0; top: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(49,168,255,0.5), transparent);
+  z-index: 5;
+  pointer-events: none;
+  animation: sweep 11s linear infinite;
+}
+
+/* ─── utilidades ─── */
+.text-outline {
+  -webkit-text-stroke: 1px #535353;
+  color: transparent;
+}
+.pixelated { image-rendering: pixelated; }
+
+.tab-notch {
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 100%, 0 100%);
+}
+
+/* ─── reduced motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .ants-rect, .ants-border, .marquee-track, .pixel-caret,
+  .pixel-float, .pixel-float-slow, .progress-stripes, .rgb-shift, .sweep-line {
+    animation: none !important;
+  }
+  .sweep-line { display: none; }
+  .reveal, .reveal-left, .reveal-right {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .tilt-card { transform: none !important; transition: none !important; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; }
+}
