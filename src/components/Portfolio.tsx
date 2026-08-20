@@ -2,6 +2,12 @@ import { useState } from "react";
 import { useReveal, useTilt } from "../hooks";
 import { SectionHead } from "./Services";
 import { MarchingAnts } from "./Chrome";
+import webImg from "../assets/WEB.png";
+import brandingImg from "../assets/BRANDING.png";
+import logosImg from "../assets/LOGOS.png";
+import papeleriaImg from "../assets/PAPELERIA.png";
+import bsImg from "../assets/BS.png";
+import lgImg from "../assets/LG.png";
 
 type Cat = "Todos" | "Branding" | "Logotipo" | "Web" | "Editorial";
 
@@ -16,51 +22,51 @@ const PROJECTS: {
   tags: string[];
 }[] = [
   {
-    title: "Identidad que se huele",
-    client: "Café Nodo",
+    title: "Brandon's Gym",
+    client: "Diseño de marca",
     cat: "Branding",
-    year: "2025",
-    img: "https://image.qwenlm.ai/generated-images/969c7c50-562e-4bb7-9ecb-ab014441a55f/_result.png",
-    tags: ["Identidad visual", "Papelería", "Señalética"],
+    year: "2026",
+    img: brandingImg,
+    tags: ["Identidad visual", "Mockups", "Logo"],
   },
   {
-    title: "Marca en modo arcade",
-    client: "Arcade Fit",
+    title: "Marca Raíz Latina",
+    client: "Construcción de logotipo",
     cat: "Logotipo",
-    year: "2024",
-    img: "https://image.qwenlm.ai/generated-images/76748a52-ba57-4655-8b36-78e0b8b2dbf1/_result.png",
+    year: "2026",
+    img: logosImg,
     tags: ["Isotipo", "Retícula", "Versiones"],
   },
   {
-    title: "Web que convierte",
-    client: "Lúmina Studio",
+    title: "ASOMIPEL",
+    client: "Rediseño de identidad visual",
     cat: "Web",
-    year: "2025",
-    img: "https://image.qwenlm.ai/generated-images/b6af3920-0bea-4c33-b6b8-f78f06941f36/_result.png",
-    tags: ["UI/UX", "Desarrollo", "SEO"],
+    year: "2026",
+   img: webImg,
+    tags: ["UI/UX", "Manual de marca", "Landing Page"],
   },
   {
-    title: "Reglas claras, marca viva",
-    client: "Manual Café Nodo",
+    title: "Mockups y papelería",
+    client: "Manual de marca ASOMIPEL",
     cat: "Editorial",
-    year: "2025",
-    img: "https://image.qwenlm.ai/generated-images/8b25e958-4ffc-4990-a55e-30a8d771ecb5/_result.png",
-    tags: ["Manual de marca", "Editorial", "Guidelines"],
+    year: "2026",
+    img: papeleriaImg,
+    tags: ["Manual de marca", "Editorial"]
   },
   {
-    title: "Snack que grita en anaquel",
-    client: "Pixelea Snacks",
+    title: "Empaque de producto y diseño de identidad",
+    client: "Sabor latino",
     cat: "Branding",
-    year: "2024",
-    img: "https://image.qwenlm.ai/generated-images/ddc6fa69-b18a-4f80-b4f5-b6308c1939e6/_result.png",
+    year: "2026",
+    img: bsImg,
     tags: ["Packaging", "Identidad", "Ilustración"],
   },
   {
-    title: "Feed con ritmo visual",
-    client: "Neon Records",
+    title: "Logotipo gym y kit de redes sociales",
+    client: "Brandon's Gym",
     cat: "Logotipo",
     year: "2026",
-    img: "https://image.qwenlm.ai/generated-images/b2637caa-0a85-49f2-bc63-541f1d4d7a54/_result.png",
+    img: lgImg,
     tags: ["Social kit", "Logotipo", "Templates"],
   },
 ];
@@ -168,7 +174,7 @@ export default function Portfolio() {
         </div>
 
         <div className="reveal mt-12 flex flex-col items-center gap-3">
-          <a href="https://www.behance.net/" target="_blank" rel="noreferrer" className="btn-pixel border-2 border-ps-line2 bg-ps-panel px-6 py-3.5 text-[10px] text-ps-text hover:border-ink-cyan hover:text-ink-cyan">
+          <a href="https://www.behance.net/gallery/245715163/PORTAFOLIO-DE-SERVICIOS" target="_blank" rel="noreferrer" className="btn-pixel border-2 border-ps-line2 bg-ps-panel px-6 py-3.5 text-[10px] text-ps-text hover:border-ink-cyan hover:text-ink-cyan">
             VER ARCHIVO COMPLETO EN BEHANCE ↗
           </a>
           <p className="font-mono text-[11px] text-ps-muted">Formato soportado: admiración · Resolución: máxima</p>

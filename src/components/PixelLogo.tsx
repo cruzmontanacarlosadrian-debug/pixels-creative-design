@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import perfilLogo from "../assets/PERFIL.png";
 
 export type GlyphMap = string[];
 
@@ -69,8 +70,7 @@ export function PixelLogoTile({ size = 44, className = "" }: { size?: number; cl
       style={{ width: size, height: size, boxShadow: "3px 3px 0 0 rgba(0,0,0,.7)" }}
       title="Pixels Creative Design"
     >
-      <PixelGlyph map={PX_MAP} colors={PX_COLORS} className="h-[82%] w-[82%]" />
-      <span className="absolute -right-1 -top-1 h-2 w-2 bg-[#ffd400]" />
+<img src={perfilLogo} alt="Pixels Creative Design" className="h-[82%] w-[82%] object-contain" />
     </div>
   );
 }

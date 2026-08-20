@@ -71,13 +71,13 @@ const ICONS: Record<string, GlyphMap> = {
 
 const SERVICES = [
   {
-    id: "srv-1", icon: "grafico", color: "#00b7eb", blend: "Normal",
+    id: "srv-1", icon: "grafico", color: "#ffd400", blend: "Normal",
     title: "Diseño Gráfico",
     desc: "Piezas digitales e impresas con acabado profesional. Cada arte sale del estudio listo para publicar o mandar a imprenta.",
-    chips: ["Social media", "Editorial", "Impresos", "Motion"],
+    chips: ["Social media", "Editorial", "Impresos"],
   },
   {
-    id: "srv-2", icon: "branding", color: "#ec008c", blend: "Multiplicar",
+    id: "srv-2", icon: "branding", color: "rgb(255, 212, 0)", blend: "Multiplicar",
     title: "Branding",
     desc: "Construcción de marca desde la raíz: estrategia, personalidad, voz y posicionamiento para que tu marca exista con intención.",
     chips: ["Estrategia", "Naming", "Tono de voz", "Arquitectura"],
@@ -89,13 +89,13 @@ const SERVICES = [
     chips: ["Isotipo", "Imagotipo", "Retícula", "Versiones"],
   },
   {
-    id: "srv-4", icon: "web", color: "#00b7eb", blend: "Superponer",
+    id: "srv-4", icon: "web", color: "#ffd400", blend: "Superponer",
     title: "Páginas Web",
     desc: "Sitios rápidos, memorables y a la medida: diseño UI/UX más desarrollo, con tu marca viva en cada scroll.",
-    chips: ["Landing pages", "E-commerce", "UI/UX", "SEO"],
+    chips: ["Landing pages", "UI/UX", "SEO"],
   },
   {
-    id: "srv-5", icon: "manual", color: "#ec008c", blend: "Luz lineal",
+    id: "srv-5", icon: "manual", color: "#ffd400", blend: "Luz lineal",
     title: "Manual de Marca",
     desc: "El reglamento oficial de tu identidad: usos correctos, tipografías, paletas y aplicaciones para que nadie la rompa.",
     chips: ["Usos correctos", "Tipografía", "Color", "Papelería"],
@@ -131,7 +131,7 @@ export default function Services() {
               </li>
             ))}
           </ul>
-          <a href="#contacto" className="mt-8 hidden font-pixel text-[10px] text-ps-cyan underline decoration-2 underline-offset-4 transition-colors hover:text-ink-magenta lg:inline-block">
+          <a href="#contacto" className="mt-8 hidden font-pixel text-[10px] text-[#EDB204] underline decoration-2 underline-offset-4 transition-colors hover:text-ink-magenta lg:inline-block">
             → PEDIR COTIZACIÓN
           </a>
         </div>
@@ -182,7 +182,7 @@ export default function Services() {
             <p className="font-mono text-[13px] text-ps-muted">
               ¿Necesitas fusionar varias capas? <span className="text-ps-text">Armamos paquetes a la medida.</span>
             </p>
-            <a href="#planes" className="btn-pixel bg-ink-magenta px-5 py-3 text-[10px] text-white">VER PLANES</a>
+            <a href="#planes" className="btn-pixel bg-[#EDB204] px-5 py-3 text-[10px] text-white">VER PLANES</a>
           </div>
         </div>
       </div>

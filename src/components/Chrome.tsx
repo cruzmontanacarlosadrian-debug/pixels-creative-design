@@ -31,7 +31,7 @@ export function MenuBar() {
     <header className="fixed inset-x-0 top-0 z-50 flex h-10 items-stretch border-b border-ps-line bg-ps-panel2 text-[12.5px] text-ps-text">
       <div className="flex items-center gap-2.5 border-r border-ps-line pl-3 pr-4">
         <PixelLogoTile size={24} className="!border" />
-        <span className="font-pixel hidden text-[9px] tracking-wider text-ps-cyan sm:block">PIXELS</span>
+        <span className="font-pixel hidden text-[9px] tracking-wider text-[#EDB204] sm:block">PIXELS</span>
       </div>
       <nav className="flex flex-1 items-stretch overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" aria-label="Secciones">
         {MENU.map((m) => (
@@ -105,8 +105,8 @@ const TOOLS: Tool[] = [
 export function ToolRail() {
   const [active, setActive] = useState("brush");
   const [swap, setSwap] = useState(false);
-  const fg = swap ? "#ec008c" : "#31a8ff";
-  const bg = swap ? "#31a8ff" : "#ec008c";
+  const fg = swap ? "#EDB204" : "#ffffff";
+  const bg = swap ? "#fefefe" : "#EDB204";
 
   return (
     <aside
@@ -169,7 +169,7 @@ export function StatusBar() {
         </div>
       </div>
       <div className="border-t border-ps-line/60 px-4 py-2 text-center font-mono text-[10px] tracking-wide text-ps-muted/70 sm:px-6">
-        © 2026 PIXELS CREATIVE DESIGN — Todos los píxeles reservados · Documento guardado automáticamente ✓
+        © 2026 PIXELS CREATIVE DESING — Todos los píxeles reservados · Documento guardado automáticamente ✓
       </div>
     </footer>
   );

@@ -31,11 +31,11 @@ export default function Hero() {
   const toggle = (k: string) => setLayers((s) => ({ ...s, [k]: !s[k] }));
 
   const LAYER_ROWS: { id: string; kind: string; color: string }[] = [
-    { id: "T_TITULO", kind: "T", color: "#31a8ff" },
-    { id: "SUBTITULO", kind: "T", color: "#d8d8d8" },
-    { id: "LOGO_PX", kind: "▦", color: "#ec008c" },
-    { id: "PIXELES_FONDO", kind: "✦", color: "#ffd400" },
-    { id: "FONDO_GRID", kind: "▩", color: "#7a7a7a" },
+    { id: "T_TITULO", kind: "T", color: "#ffd400" },
+    { id: "SUBTITULO", kind: "SB", color: "#d8d8d8" },
+    { id: "LOGO_PX", kind: "▦", color: "#ffd400" },
+    { id: "PIXELES_FONDO", kind: "✦", color: "#d8d8d8" },
+    { id: "FONDO_GRID", kind: "▩", color: "#ffd400" },
   ];
 
   return (
@@ -43,7 +43,7 @@ export default function Hero() {
       {/* pestañas de documento */}
       <div className="flex items-end gap-0 border-b border-ps-line bg-[#262626] pl-2 pt-1.5 lg:pl-3">
         <div className="flex items-center gap-2 border border-b-0 border-ps-line bg-ps-canvas px-4 py-1.5 text-[12px] text-ps-text">
-          <span className="h-1.5 w-1.5 bg-ps-cyan" aria-hidden="true" />
+          <span className="h-1.5 w-1.5 bg-[#EDB204]" aria-hidden="true" />
           inicio.psd
           <span className="text-ps-muted transition-colors hover:text-white" title="Cerrar">✕</span>
         </div>
@@ -77,8 +77,8 @@ export default function Hero() {
             {/* píxeles decorativos con parallax */}
             {layers.PIXELES_FONDO && (
               <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-                <div data-depth="90" className="absolute left-[6%] top-16"><PixelStar color="#31a8ff" className="pixel-float h-8 w-8 opacity-80" /></div>
-                <div data-depth="150" className="absolute right-[30%] top-24 hidden md:block"><PixelStar color="#ec008c" className="pixel-float-slow h-5 w-5 opacity-70" /></div>
+                <div data-depth="90" className="absolute left-[6%] top-16"><PixelStar color="#EDB204" className="pixel-float h-8 w-8 opacity-80" /></div>
+                <div data-depth="150" className="absolute right-[30%] top-24 hidden md:block"><PixelStar color="#EDB204" className="pixel-float-slow h-5 w-5 opacity-70" /></div>
                 <div data-depth="60" className="absolute bottom-28 left-[12%] hidden md:block">
                   <span className="pixel-float block h-3 w-3 bg-ink-yellow/80" />
                 </div>
@@ -86,12 +86,12 @@ export default function Hero() {
                   <PixelCursor className="pixel-float-slow h-12 w-12 opacity-90" />
                 </div>
                 <div data-depth="200" className="absolute left-[45%] top-[55%] hidden lg:block">
-                  <span className="pixel-float block h-2 w-2 bg-ps-cyan/70" />
+                  <span className="pixel-float block h-2 w-2 bg-[#EDB204]" />
                 </div>
                 <div data-depth="100" className="absolute left-[70%] bottom-16 hidden md:block">
                   <PixelGlyph
                     map={["C.C", ".C.", "C.C"]}
-                    colors={{ C: "#3f3f3f" }}
+                    colors={{ C: "#EDB204" }}
                     className="pixel-float-slow h-6 w-6"
                   />
                 </div>
@@ -102,7 +102,7 @@ export default function Hero() {
               {/* ── columna de contenido ── */}
               <div className="flex flex-col justify-center">
                 <p className="mb-5 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.3em] text-ps-muted">
-                  <span className="h-2 w-2 bg-ink-magenta" aria-hidden="true" />
+                  <span className="h-2 w-2 bg-[#EDB204]" aria-hidden="true" />
                   Estudio de diseño gráfico · Herramienta: creatividad
                 </p>
 
@@ -117,14 +117,14 @@ export default function Hero() {
                       <span key={pos} className={`absolute h-2.5 w-2.5 border border-ps-blue bg-white ${pos}`} aria-hidden="true" />
                     ))}
                     <h1 className="rgb-shift font-pixel text-[clamp(1.9rem,7vw,4.6rem)] leading-[1.25]">
-                      <span className="text-ps-cyan">
+                      <span className="text-[#EDB204]">
                         {out}
                         <span className={`pixel-caret text-white ${done ? "" : ""}`}>▮</span>
                       </span>
                       <br />
                       <span className="text-ps-text">CREATIVE</span>
                       <br />
-                      <span className="text-ink-magenta">DESIGN</span>
+                      <span className="text-[#EDB204]">DESING</span>
                     </h1>
                   </div>
                 )}
@@ -137,7 +137,7 @@ export default function Hero() {
                     </p>
 
                     <div className="mt-8 flex flex-wrap items-center gap-4">
-                      <a href="#contacto" className="btn-pixel bg-ps-blue px-6 py-4 text-[11px] text-white">
+                      <a href="#contacto" className="btn-pixel bg-[#EDB204] px-6 py-4 text-[11px] text-white">
                         ▶ INICIAR PROYECTO
                       </a>
                       <a href="#portafolio" className="btn-pixel border-2 border-ps-line2 bg-ps-panel px-6 py-[14px] text-[11px] text-ps-text hover:border-ps-cyan hover:text-ps-cyan">
@@ -148,12 +148,12 @@ export default function Hero() {
                     <dl className="mt-10 grid max-w-lg grid-cols-3 gap-3">
                       {[
                         { n: "+120", l: "proyectos entregados" },
-                        { n: "8", l: "años diseñando" },
-                        { n: "46", l: "marcas activas" },
+                        { n: "+4", l: "años diseñando" },
+                        { n: "+46", l: "marcas activas" },
                       ].map((s) => (
                         <div key={s.l} className="chip-hard flex flex-col border border-ps-line bg-ps-panel/80 px-3 py-3">
                           <dt className="order-2 font-mono text-[10px] uppercase tracking-wide text-ps-muted">{s.l}</dt>
-                          <dd className="font-pixel text-sm text-ps-cyan sm:text-base">{s.n}</dd>
+                          <dd className="font-pixel text-sm text-[#EDB204] sm:text-base">{s.n}</dd>
                         </div>
                       ))}
                     </dl>
@@ -209,15 +209,15 @@ export default function Hero() {
                   <div className="space-y-4 px-3 py-4">
                     <label className="block">
                       <span className="mb-1.5 flex justify-between font-mono text-[11px] text-ps-muted">
-                        Opacidad del título <span className="text-ps-cyan">{opacity}%</span>
+                        Opacidad del título <span className="text-ps-white">{opacity}%</span>
                       </span>
                       <input
                         type="range"
-                        min={15}
+                        min={0}
                         max={100}
                         value={opacity}
                         onChange={(e) => setOpacity(Number(e.target.value))}
-                        className="w-full accent-[#2f80ed]"
+                        className="w-full accent-[#EDB204]"
                       />
                     </label>
                     <label className="block">

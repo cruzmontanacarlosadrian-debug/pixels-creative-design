@@ -36,8 +36,8 @@ const PLANS = [
   {
     id: "png",
     ext: "PNG",
-    name: "ESENCIAL",
-    price: "$2,900",
+    name: "BÁSICO",
+    price: "USD 89,99",
     color: "#8f8f8f",
     tagline: "Para empezar a verte profesional.",
     features: [
@@ -51,10 +51,10 @@ const PLANS = [
   },
   {
     id: "psd",
-    ext: "PSD",
-    name: "ESTUDIO",
-    price: "$7,900",
-    color: "#31a8ff",
+    ext: "SGV",
+    name: "PROMEDIO",
+    price: "USD 289,99",
+    color: "#EDB204",
     tagline: "El favorito: marca completa y lista para aplicar.",
     features: [
       "3 propuestas de logotipo",
@@ -69,18 +69,17 @@ const PLANS = [
   },
   {
     id: "raw",
-    ext: "RAW",
-    name: "AGENCIA",
-    price: "$18,000",
-    color: "#ec008c",
+    ext: "PSD",
+    name: "PROFESIONAL",
+    price: "USD 859,99",
+    color: "#31a8ff",
     tagline: "Todo lo de Estudio, más web y sistema completo.",
     features: [
       "Identidad visual completa",
       "Manual de marca extendido",
-      "Página web (hasta 5 secciones)",
-      "Kit de redes sociales + templates",
-      "Acompañamiento 30 días",
-      "Ajustes ilimitados (con cariño)",
+      "Página web (con dominio)",
+      "Kit de redes sociales + templates",,
+      "Ajustes limitados (con cariño)",
     ],
     featured: false,
   },
@@ -231,15 +230,15 @@ export function Contact() {
         <div>
           <SectionHead
             tag="Capa 07 · Archivo → Guardar como…"
-            title="GUARDA TU | PROYECTO AQUÍ"
+            title="TRABAJA CON | NOSOTROS"
             accent="#ffd400"
             copy="Cuéntanos qué necesitas y en menos de 24 horas recibes una propuesta con alcance, tiempos y precio. Sin compromisos, sin spam."
           />
 
           <ul className="reveal mt-10 space-y-4">
             {[
-              { k: "WhatsApp", v: "+52 1 55 1234 5678", href: "https://wa.me/5215512345678", c: "#00b7eb" },
-              { k: "Email", v: "hola@pixelscreative.design", href: "mailto:hola@pixelscreative.design", c: "#ec008c" },
+              { k: "WhatsApp", v: "+506 70286826", href: "https://wa.link/ray9hz", c: "#00b7eb" },
+              { k: "Email", v: "pixelcreativedesing@gmail.com", href: "mailto:pixelcreativedesing@gmail.com", c: "#ffffff" },
               { k: "Instagram", v: "@pixelscreative.design", href: "https://www.instagram.com/", c: "#ffd400" },
             ].map((r) => (
               <li key={r.k}>
@@ -255,7 +254,7 @@ export function Contact() {
           </ul>
 
           <div className="reveal mt-8 flex flex-wrap gap-x-8 gap-y-2 font-mono text-[12px] text-ps-muted">
-            <span>◷ Lun – Vie · 9:00 a 18:00 (CDMX)</span>
+            <span>◷ Lun – Vie · 9:00 a 18:00 (COL)</span>
             <span>◈ Remoto a todo el mundo</span>
             <span className="flex items-center gap-1.5">Respuesta &lt; 24 h <PixelHeart className="h-2.5 w-3" /></span>
           </div>
@@ -289,8 +288,8 @@ export function Contact() {
                       className="w-full border border-ps-line2 bg-ps-well px-3 py-2.5 font-mono text-[13px] text-ps-text placeholder:text-ps-muted/60 outline-none transition-colors focus:border-ps-cyan" />
                   </label>
                   <label className="block">
-                    <span className="mb-1.5 block font-mono text-[11px] text-ps-muted">Email *</span>
-                    <input required type="email" name="email" placeholder="tu@correo.com"
+                    <span className="mb-1.5 block font-mono text-[11px] text-ps-muted">Teléfono *</span>
+                    <input required type="tel" name="phone" placeholder="xxx-xxx-xxxx"
                       className="w-full border border-ps-line2 bg-ps-well px-3 py-2.5 font-mono text-[13px] text-ps-text placeholder:text-ps-muted/60 outline-none transition-colors focus:border-ps-cyan" />
                   </label>
                 </div>

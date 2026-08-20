@@ -6,7 +6,7 @@ const STEPS = [
   {
     k: "Ctrl+O",
     title: "Abrir brief.psd",
-    desc: "Escuchamos tu idea, objetivos y público. Definimos alcance, tiempos y qué significa éxito para ti.",
+    desc: "Escuchamos tu idea, objetivos y público.                           Definimos alcance, tiempos y qué significa éxito para ti.",
     color: "#31a8ff",
     icon: ["..CCCCC", "..C...C", "..C...C", "CCCCCCC", "..C....", "..C...."],
   },
@@ -21,21 +21,21 @@ const STEPS = [
     k: "B",
     title: "Trazado de conceptos",
     desc: "Bocetos, moodboards y rutas creativas. Exploramos varios caminos antes de quedarnos con el correcto.",
-    color: "#ec008c",
+    color: "#31a8ff",
     icon: ["...CC..", "..CCCC.", "..CCCC.", "...CC..", "...C...", "..CCC.."],
   },
   {
     k: "Ctrl+T",
     title: "Diseño en alta resolución",
     desc: "Vectorizamos, construimos retícula, elegimos tipografías y paleta. La marca toma su forma final.",
-    color: "#ffd400",
+    color: "#31a8ff",
     icon: ["CCCCCCC", "...C...", "...C...", "...C...", "...C...", "...C..."],
   },
   {
     k: "Ctrl+Alt+Z",
     title: "Ajustes y revisión",
     desc: "Rondas de feedback contigo. Afinamos cada píxel hasta que digas «es exactamente esto».",
-    color: "#ec008c",
+    color: "#31a8ff",
     icon: ["..CC...", ".C..C..", "C....C.", "C....C.", ".C..C..", "..CC..."],
   },
   {
@@ -104,24 +104,24 @@ export default function Process() {
 /* ══════════ Testimonios = comentarios fijados en el lienzo ══════════ */
 const QUOTES = [
   {
-    quote: "Llegamos con una idea suelta y salimos con una marca que la gente fotografía en la calle. El manual de marca vale oro.",
-    name: "Mariana López",
-    role: "Fundadora · Café Nodo",
-    color: "#00b7eb",
+    quote: "Llegamos con una imagen desordenada y salimos con una marca que representa lo que realmente somos: unidad y fe. El rediseño nos dio credibilidad en toda Costa Rica.",
+    name: "Gersom Mendoza",
+    role: "Director · ASOMIPEL",
+    color: "#EDB204",
     rot: "-2deg",
   },
   {
-    quote: "Rediseñaron nuestro logo y la web completa. Las ventas online subieron 40% el primer trimestre. Todo pixel-perfect.",
-    name: "Diego Ramírez",
-    role: "CEO · Arcade Fit",
-    color: "#ec008c",
+    quote: "No sabía lo que mi gimnasio necesitaba hasta que vi el resultado. El logotipo y el manual de identidad capturan perfectamente la energía que queremos transmitir.",
+    name: "Brandon Rojas",
+    role: "CEO · Brandon's Gym",
+    color: "#EDB204",
     rot: "1.5deg",
   },
   {
-    quote: "Entienden de estrategia, no solo de estética. Cada decisión de diseño venía con un porqué. Repetiremos sin duda.",
-    name: "Sofía Herrera",
-    role: "Dir. Marketing · Lúmina",
-    color: "#ffd400",
+    quote: "Transformaron nuestra idea en una marca con alma. El logo, la web y toda la identidad visual hicieron que nuestros souvenirs latinos se vendan solos.",
+    name: "Carlos Cruz",
+    role: "CEO · Raíz latina",
+    color: "#EDB204",
     rot: "-1deg",
   },
 ];
@@ -136,7 +136,7 @@ export function Testimonials() {
           tag="Capa 04 · Comentarios"
           align="center"
           title="COMENTARIOS | DEL LIENZO"
-          accent="#ec008c"
+          accent="#31a8ff"
           copy="Comentarios fijados por clientes reales sobre el documento final. Sin filtros, sin capa de ajuste."
         />
         <div className="mt-14 grid gap-8 md:grid-cols-3 lg:gap-10">
@@ -159,7 +159,7 @@ export function Testimonials() {
                 <p className="mt-1.5 font-mono text-[11px] text-ps-muted">{q.role}</p>
               </figcaption>
               <span className="mt-4 flex items-center gap-1.5 font-mono text-[10px] text-ps-muted">
-                Resuelto <PixelHeart className="h-2 w-2.5" color={q.color} /> hace 2 semanas
+                Resuelto <PixelHeart className="h-2 w-2.5" color={q.color} /> hace 36 semanas
               </span>
             </figure>
           ))}
