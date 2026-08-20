@@ -36,32 +36,6 @@ export function PixelGlyph({
   );
 }
 
-/* ── Logotipo "Px" en píxeles ── */
-const PX_MAP: GlyphMap = [
-  "................",
-  "................",
-  "................",
-  "................",
-  "..PPPP..........",
-  "..P...P.........",
-  "..P...P..X...X..",
-  "..PPPP....X.X...",
-  "..P........X....",
-  "..P.......X.X...",
-  "..P......X...X..",
-  "................",
-  "...........YY...",
-  "............YY..",
-  "................",
-  "................",
-];
-
-const PX_COLORS = {
-  P: "#31a8ff",
-  X: "#ec008c",
-  Y: "#ffd400",
-};
-
 /** Baldosa estilo app de Adobe con el monograma Px */
 export function PixelLogoTile({ size = 44, className = "" }: { size?: number; className?: string }) {
   return (
