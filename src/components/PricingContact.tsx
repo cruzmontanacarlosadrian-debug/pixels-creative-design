@@ -197,10 +197,28 @@ export function Contact() {
 
   useEffect(() => () => { if (timer.current) window.clearInterval(timer.current); }, []);
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (status === "saving") return;
     setStatus("saving");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    formData.append("access_key", "6ef26321-63a2-41ff-81ee-1ae98c5a7c8b");
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+      headers: { Accept: "application/json" },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (!data.success) throw new Error(data.message || "Error al enviar");
+      })
+      .catch((err) => {
+        console.error("Error enviando formulario:", err);
+      });
+
     if (reduced) {
       setProgress(100);
       setStatus("done");
