@@ -95,7 +95,7 @@ export function Pricing() {
           tag="Capa 06 · Exportar como…"
           title="ELIGE TU | FORMATO"
           accent="#31a8ff"
-          copy="Tres calidades de exportación, un mismo estándar: trabajo que se nota. Precios en MXN, IVA no incluido."
+          copy="Tres calidades de exportación, un mismo estándar: trabajo que se nota. Precios en USD, IVA no incluido."
         />
 
         <div className="mt-14 grid gap-8 lg:grid-cols-[1.15fr_1fr] lg:gap-10">
@@ -116,7 +116,7 @@ export function Pricing() {
                   </div>
                 </div>
                 <p className="mt-7 font-pixel text-[clamp(1.6rem,4vw,2.4rem)] text-white">
-                  {p.price} <span className="text-[11px] text-ps-muted">MXN</span>
+                  {p.price} <span className="text-[11px] text-ps-muted">USD</span>
                 </p>
                 <ul className="mt-7 flex-1 space-y-3">
                   {p.features.map((f) => (
@@ -257,7 +257,7 @@ const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
             {[
               { k: "WhatsApp", v: "+506 70286826", href: "https://wa.link/ray9hz", c: "#00b7eb" },
               { k: "Email", v: "pixelcreativedesing@gmail.com", href: "mailto:pixelcreativedesing@gmail.com", c: "#ffffff" },
-              { k: "Instagram", v: "@pixelscreative.design", href: "https://www.instagram.com/", c: "#ffd400" },
+              { k: "Instagram", v: "@pixdesing_oficial", href: "https://www.instagram.com/pixdesing_oficial/", c: "#ffd400" },
             ].map((r) => (
               <li key={r.k}>
                 <a href={r.href} target={r.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer"
